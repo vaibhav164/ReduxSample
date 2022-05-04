@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, useColorScheme, View} from 'react-native';
+import {Navigator} from './src/Navigation/Navigator';
 
 const App = () => {
   return <Navigator />;
