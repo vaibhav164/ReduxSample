@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, View, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export const ProductCard = ({title, URL, getPrice, price}) => {
+  const [pressedColor, setPressedColor] = useState('#EFD345');
   return (
     <TouchableOpacity
       onPress={() => {
         getPrice(price);
+        pressedColor == '#EFD345'
+          ? setPressedColor('red')
+          : setPressedColor('#EFD345');
       }}>
       <View
         style={{
@@ -14,7 +18,7 @@ export const ProductCard = ({title, URL, getPrice, price}) => {
           justifyContent: 'center',
           alignItems: 'center',
           width: 120,
-          backgroundColor: '#EFD345',
+          backgroundColor: pressedColor,
           margin: 5,
           borderRadius: 5,
         }}>

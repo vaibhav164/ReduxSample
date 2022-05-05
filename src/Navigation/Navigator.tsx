@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-native-gesture-handler';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {HomeScreen} from '../Screens/HomeScreen';
@@ -8,8 +7,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {ChartScreen} from '../Screens/ChartScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-// import Icon from 'react-native-ionicons';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 export const Navigator = () => {
@@ -21,16 +18,20 @@ export const Navigator = () => {
           tabBarInactiveBackgroundColor: '#F2F2F2',
           headerShown: false,
         }}>
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Home" component={StackNavigator} />
         <Tab.Screen name="Settings" component={Setting} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-export const StackKavigator = () => {
+export const StackNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Cart" component={ChartScreen} />
     </Stack.Navigator>
   );

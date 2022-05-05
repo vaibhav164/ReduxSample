@@ -98,7 +98,8 @@ export const HomeScreen = ({navigation}) => {
           style={{fontSize: 40, fontWeight: '800', alignSelf: 'flex-start'}}>
           Products
         </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Cart', {value: cost})}>
           <Text
             style={{
               fontSize: 20,
