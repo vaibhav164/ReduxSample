@@ -2,17 +2,21 @@ import React from 'react';
 import {Image, View, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-export const ProductCard = ({title, URL}) => {
+export const ProductCard = ({title, URL, getPrice, price}) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        getPrice(price);
+      }}>
       <View
         style={{
           height: 130,
           justifyContent: 'center',
           alignItems: 'center',
           width: 120,
-          backgroundColor: '#F8B400',
+          backgroundColor: '#EFD345',
           margin: 5,
+          borderRadius: 5,
         }}>
         <View>
           <Image
@@ -23,7 +27,7 @@ export const ProductCard = ({title, URL}) => {
           />
         </View>
         <View>
-          <Text style={{fontSize: 18}}>{title}</Text>
+          <Text style={{fontSize: 18, fontWeight: 'bold'}}>{title}</Text>
         </View>
       </View>
     </TouchableOpacity>
