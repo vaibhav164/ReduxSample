@@ -44,7 +44,7 @@ export const ProductCard = ({
         <View style={{flexDirection: 'row'}}>
           {itemNumber ? (
             <TouchableOpacity
-              onPuress={() => {
+              onPress={() => {
                 reducePrice(price);
               }}>
               <View

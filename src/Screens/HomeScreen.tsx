@@ -88,10 +88,19 @@ const Obj = {
 export const HomeScreen = ({navigation}) => {
   const [cost, setCost] = useState(0);
   const handleValue = (val, price) => {
-    // console.log('Price', val);
     setCost(cost + price);
     store.dispatch({
       type: 'ITEM_ADDED',
+      payload: {
+        val,
+      },
+    });
+  };
+  const handleReduction = val => {
+    console.log('values', val);
+    cost <= 0 ? null : setCost(cost - val);
+    store.dispatch({
+      type: 'ITEM_REMOVED',
       payload: {
         val,
       },
@@ -146,6 +155,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.strawberry.price}
               getPrice={handleValue}
               val={Obj.fruits.strawberry}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.fruits.mango.name}
@@ -153,6 +163,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.mango.price}
               getPrice={handleValue}
               val={Obj.fruits.mango}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.fruits.apple.name}
@@ -160,6 +171,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.apple.price}
               getPrice={handleValue}
               val={Obj.fruits.apple}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.fruits.orange.name}
@@ -167,6 +179,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.orange.price}
               getPrice={handleValue}
               val={Obj.fruits.orange}
+              reducePrice={handleReduction}
             />
           </ScrollView>
         </View>
@@ -181,6 +194,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.carrot.price}
               getPrice={handleValue}
               val={Obj.vegitables.carrot}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.vegitables.cabbage.name}
@@ -188,6 +202,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.cabbage.price}
               getPrice={handleValue}
               val={Obj.vegitables.cabbage}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.vegitables.tomato.name}
@@ -195,6 +210,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.tomato.price}
               getPrice={handleValue}
               val={Obj.vegitables.tomato}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.vegitables.chille.name}
@@ -202,6 +218,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.chille.price}
               getPrice={handleValue}
               val={Obj.vegitables.chille}
+              reducePrice={handleReduction}
             />
           </ScrollView>
         </View>
@@ -216,6 +233,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.Butter.price}
               getPrice={handleValue}
               val={Obj.milkProduct.Butter}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.milkProduct.Milk.name}
@@ -223,6 +241,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.Milk.price}
               getPrice={handleValue}
               val={Obj.milkProduct.Milk}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.milkProduct.cheese.name}
@@ -230,6 +249,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.cheese.price}
               getPrice={handleValue}
               val={Obj.milkProduct.cheese}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.milkProduct.curd.name}
@@ -237,6 +257,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.curd.price}
               getPrice={handleValue}
               val={Obj.milkProduct.curd}
+              reducePrice={handleReduction}
             />
           </ScrollView>
         </View>

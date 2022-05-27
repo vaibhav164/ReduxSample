@@ -390,6 +390,23 @@ PODS:
     - React-Core
     - React-RCTImage
   - SocketRocket (0.6.0)
+  - Stripe (21.13.0):
+    - Stripe/Stripe3DS2 (= 21.13.0)
+    - StripeApplePay (= 21.13.0)
+    - StripeCore (= 21.13.0)
+    - StripeUICore (= 21.13.0)
+  - stripe-react-native (0.5.0):
+    - React-Core
+    - Stripe (~> 21.13.0)
+  - Stripe/Stripe3DS2 (21.13.0):
+    - StripeApplePay (= 21.13.0)
+    - StripeCore (= 21.13.0)
+    - StripeUICore (= 21.13.0)
+  - StripeApplePay (21.13.0):
+    - StripeCore (= 21.13.0)
+  - StripeCore (21.13.0)
+  - StripeUICore (21.13.0):
+    - StripeCore (= 21.13.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -455,6 +472,7 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "stripe-react-native (from `../node_modules/@stripe/stripe-react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -473,6 +491,10 @@ SPEC REPOS:
     - libevent
     - OpenSSL-Universal
     - SocketRocket
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeUICore
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -548,6 +570,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  stripe-react-native:
+    :path: "../node_modules/@stripe/stripe-react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -602,6 +626,11 @@ SPEC CHECKSUMS:
   RNReanimated: 64573e25e078ae6bec03b891586d50b9ec284393
   RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  Stripe: 1c350569f719f194d1a58a9564279d236d72c942
+  stripe-react-native: 7a5bd43160b0a2a4a5dbcffc542e6ab4074adf49
+  StripeApplePay: 2ec807acb7f95e948d430e50aa49b6b04475f1a5
+  StripeCore: a855a2f0d2d478afd9c2a3daccfbe6df6708fcc0
+  StripeUICore: a7e450146986fab95293b0164dd37dda7994982b
   Yoga: 17cd9a50243093b547c1e539c749928dd68152da
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
