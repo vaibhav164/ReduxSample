@@ -14,8 +14,8 @@ export const Navigator = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
-          tabBarActiveBackgroundColor: '#EFD345',
-          tabBarInactiveBackgroundColor: '#F2F2F2',
+          tabBarActiveBackgroundColor: '#C4DDFF',
+          tabBarInactiveBackgroundColor: '#1B2430',
           headerShown: false,
         }}>
         <Tab.Screen name="Home" component={StackNavigator} />

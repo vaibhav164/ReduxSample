@@ -112,7 +112,7 @@ export const HomeScreen = ({navigation}) => {
       style={{
         flex: 1,
         paddingTop: 40,
-        backgroundColor: '#F190B7',
+        backgroundColor: '#4B5D67',
         justifyContent: 'space-evenly',
         borderRadius: 5,
       }}>
@@ -123,7 +123,12 @@ export const HomeScreen = ({navigation}) => {
           alignItems: 'center',
         }}>
         <Text
-          style={{fontSize: 40, fontWeight: '800', alignSelf: 'flex-start'}}>
+          style={{
+            fontSize: 40,
+            fontWeight: '800',
+            color: '#F6FBF4',
+            alignSelf: 'flex-start',
+          }}>
           Products
         </Text>
         <TouchableOpacity
@@ -132,6 +137,7 @@ export const HomeScreen = ({navigation}) => {
             style={{
               fontSize: 20,
               fontWeight: '800',
+              color: '#F6FBF4',
               alignSelf: 'flex-start',
             }}>
             Cart{`(${cost})`}
@@ -145,7 +151,7 @@ export const HomeScreen = ({navigation}) => {
             height: 200,
             justifyContent: 'center',
           }}>
-          <Text style={{fontSize: 30, fontWeight: '800', color: '#B20600'}}>
+          <Text style={{fontSize: 30, fontWeight: '800', color: '#ECE5C7'}}>
             Fruits
           </Text>
           <ScrollView horizontal={true}>
@@ -184,7 +190,7 @@ export const HomeScreen = ({navigation}) => {
           </ScrollView>
         </View>
         <View style={{flex: 0.5, height: 200}}>
-          <Text style={{fontSize: 30, fontWeight: '800', color: '#B20600'}}>
+          <Text style={{fontSize: 30, fontWeight: '800', color: '#ECE5C7'}}>
             Veggies
           </Text>
           <ScrollView horizontal={true}>
@@ -223,7 +229,7 @@ export const HomeScreen = ({navigation}) => {
           </ScrollView>
         </View>
         <View style={{flex: 0.4, height: 200}}>
-          <Text style={{fontSize: 30, fontWeight: '800', color: '#B20600'}}>
+          <Text style={{fontSize: 30, fontWeight: '800', color: '#ECE5C7'}}>
             MilkProducts
           </Text>
           <ScrollView horizontal={true}>
