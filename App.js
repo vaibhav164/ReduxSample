@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import 'react-native-gesture-handler';
-import {StyleSheet, Text, useColorScheme, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {Navigator} from './src/Navigation/Navigator';
-
 const App = () => {
+  const [publishableKey, setPublishableKey] = useState('');
+
+  const fetchPublishableKey = async () => {
+    const key = await fetchKey(); // fetch key from your server here
+    setPublishableKey(key);
+  };
+
+  useEffect(() => {
+    fetchPublishableKey();
+  }, []);
   return <Navigator />;
 };
 

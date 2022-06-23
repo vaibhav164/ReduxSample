@@ -10,12 +10,12 @@ export const ProductCard = ({
   val,
   reducePrice,
 }) => {
-  const [pressedColor, setPressedColor] = useState('#EFD345');
+  const [pressedColor, setPressedColor] = useState('#646FD4');
   const [itemNumber, setItemNumber] = useState(false);
   return (
     <TouchableOpacity
       onPress={() => {
-        pressedColor == '#EFD345'
+        pressedColor == '##646FD4'
           ? setPressedColor('#D49B54')
           : setPressedColor('#EFD345');
         setItemNumber(!itemNumber);
@@ -44,7 +44,7 @@ export const ProductCard = ({
         <View style={{flexDirection: 'row'}}>
           {itemNumber ? (
             <TouchableOpacity
-              onPuress={() => {
+              onPress={() => {
                 reducePrice(price);
               }}>
               <View

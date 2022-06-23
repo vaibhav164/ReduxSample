@@ -88,10 +88,19 @@ const Obj = {
 export const HomeScreen = ({navigation}) => {
   const [cost, setCost] = useState(0);
   const handleValue = (val, price) => {
-    // console.log('Price', val);
     setCost(cost + price);
     store.dispatch({
       type: 'ITEM_ADDED',
+      payload: {
+        val,
+      },
+    });
+  };
+  const handleReduction = val => {
+    console.log('values', val);
+    cost <= 0 ? null : setCost(cost - val);
+    store.dispatch({
+      type: 'ITEM_REMOVED',
       payload: {
         val,
       },
@@ -103,7 +112,7 @@ export const HomeScreen = ({navigation}) => {
       style={{
         flex: 1,
         paddingTop: 40,
-        backgroundColor: '#F190B7',
+        backgroundColor: '#4B5D67',
         justifyContent: 'space-evenly',
         borderRadius: 5,
       }}>
@@ -114,7 +123,12 @@ export const HomeScreen = ({navigation}) => {
           alignItems: 'center',
         }}>
         <Text
-          style={{fontSize: 40, fontWeight: '800', alignSelf: 'flex-start'}}>
+          style={{
+            fontSize: 40,
+            fontWeight: '800',
+            color: '#F6FBF4',
+            alignSelf: 'flex-start',
+          }}>
           Products
         </Text>
         <TouchableOpacity
@@ -123,6 +137,7 @@ export const HomeScreen = ({navigation}) => {
             style={{
               fontSize: 20,
               fontWeight: '800',
+              color: '#F6FBF4',
               alignSelf: 'flex-start',
             }}>
             Cart{`(${cost})`}
@@ -136,7 +151,7 @@ export const HomeScreen = ({navigation}) => {
             height: 200,
             justifyContent: 'center',
           }}>
-          <Text style={{fontSize: 30, fontWeight: '800', color: '#B20600'}}>
+          <Text style={{fontSize: 30, fontWeight: '800', color: '#ECE5C7'}}>
             Fruits
           </Text>
           <ScrollView horizontal={true}>
@@ -146,6 +161,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.strawberry.price}
               getPrice={handleValue}
               val={Obj.fruits.strawberry}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.fruits.mango.name}
@@ -153,6 +169,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.mango.price}
               getPrice={handleValue}
               val={Obj.fruits.mango}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.fruits.apple.name}
@@ -160,6 +177,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.apple.price}
               getPrice={handleValue}
               val={Obj.fruits.apple}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.fruits.orange.name}
@@ -167,11 +185,12 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.fruits.orange.price}
               getPrice={handleValue}
               val={Obj.fruits.orange}
+              reducePrice={handleReduction}
             />
           </ScrollView>
         </View>
         <View style={{flex: 0.5, height: 200}}>
-          <Text style={{fontSize: 30, fontWeight: '800', color: '#B20600'}}>
+          <Text style={{fontSize: 30, fontWeight: '800', color: '#ECE5C7'}}>
             Veggies
           </Text>
           <ScrollView horizontal={true}>
@@ -181,6 +200,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.carrot.price}
               getPrice={handleValue}
               val={Obj.vegitables.carrot}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.vegitables.cabbage.name}
@@ -188,6 +208,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.cabbage.price}
               getPrice={handleValue}
               val={Obj.vegitables.cabbage}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.vegitables.tomato.name}
@@ -195,6 +216,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.tomato.price}
               getPrice={handleValue}
               val={Obj.vegitables.tomato}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.vegitables.chille.name}
@@ -202,11 +224,12 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.vegitables.chille.price}
               getPrice={handleValue}
               val={Obj.vegitables.chille}
+              reducePrice={handleReduction}
             />
           </ScrollView>
         </View>
         <View style={{flex: 0.4, height: 200}}>
-          <Text style={{fontSize: 30, fontWeight: '800', color: '#B20600'}}>
+          <Text style={{fontSize: 30, fontWeight: '800', color: '#ECE5C7'}}>
             MilkProducts
           </Text>
           <ScrollView horizontal={true}>
@@ -216,6 +239,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.Butter.price}
               getPrice={handleValue}
               val={Obj.milkProduct.Butter}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.milkProduct.Milk.name}
@@ -223,6 +247,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.Milk.price}
               getPrice={handleValue}
               val={Obj.milkProduct.Milk}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.milkProduct.cheese.name}
@@ -230,6 +255,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.cheese.price}
               getPrice={handleValue}
               val={Obj.milkProduct.cheese}
+              reducePrice={handleReduction}
             />
             <ProductCard
               title={Obj.milkProduct.curd.name}
@@ -237,6 +263,7 @@ export const HomeScreen = ({navigation}) => {
               price={Obj.milkProduct.curd.price}
               getPrice={handleValue}
               val={Obj.milkProduct.curd}
+              reducePrice={handleReduction}
             />
           </ScrollView>
         </View>

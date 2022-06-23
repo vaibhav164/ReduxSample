@@ -5,10 +5,14 @@
 import 'react-native';
 import React from 'react';
 import App from '../App';
+import {render, fireEvent} from '@testing-library/react-native';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
+import {HomeScreen} from '../src/Screens/HomeScreen';
+import {Login} from '../src/Screens/Login';
 
-it('renders correctly', () => {
-  renderer.create(<App />);
-});
+const {getAllByLabelText, getByText} = render(<Login />);
+
+// it('renders correctly', () => {
+//   renderer.create(<Login />);
+// });
