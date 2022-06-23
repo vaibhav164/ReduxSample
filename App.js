@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     flex: 1,
     backgroundColor: 'blue',
-    paddingHorizontal: 24,
+    paddingHorizontal: 30,
   },
   sectionTitle: {
     fontSize: 24,
