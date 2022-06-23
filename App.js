@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import 'react-native-gesture-handler';
 import {StyleSheet} from 'react-native';
 import {Navigator} from './src/Navigation/Navigator';
-import {StripeProvider} from '@stripe/stripe-react-native';
 const App = () => {
   const [publishableKey, setPublishableKey] = useState('');
 
@@ -14,13 +13,7 @@ const App = () => {
   useEffect(() => {
     fetchPublishableKey();
   }, []);
-  return (
-    <StripeProvider
-      publishableKey={publishableKey}
-      merchantIdentifier="merchant.identifier">
-      <Navigator />
-    </StripeProvider>
-  );
+  return <Navigator />;
 };
 
 const styles = StyleSheet.create({
